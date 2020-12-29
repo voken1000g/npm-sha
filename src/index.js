@@ -4,10 +4,6 @@ const sha1 = function (value) {
   return crypto.createHash('sha1').update(value).digest()
 }
 
-const sha3 = function (value) {
-  return crypto.createHash('sha3').update(value).digest()
-}
-
 const sha224 = function (value) {
   return crypto.createHash('sha224').update(value).digest()
 }
@@ -26,7 +22,6 @@ const sha512 = function (value) {
 
 module.exports = {
   sha1: sha1,
-  sha3: sha3,
   sha224: sha224,
   sha256: sha256,
   sha384: sha384,
