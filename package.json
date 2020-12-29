@@ -1,0 +1,31 @@
+{
+  "name": "@voken/sha",
+  "version": "1.0.0",
+  "description": "@voken/sha",
+  "keywords": [
+    "sha1",
+    "sha3",
+    "sha224",
+    "sha256",
+    "sha384",
+    "sha512",
+    "voken",
+    "voken1000g",
+    "crypto",
+    "cryptography"
+  ],
+  "homepage": "https://github.com/voken1000g/npm-sha",
+  "author": "@voken1000g",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/voken1000g/npm-sha"
+  },
+  "bugs": {
+    "url": "https://github.com/voken1000g/npm-sha/issues"
+  },
+  "main": "src/index.js",
+  "dependencies": {
+  },
+  "test": "echo \"Error: no test specified\" && exit 1"
+}
