@@ -1,6 +1,6 @@
 {
   "name": "@voken/sha",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "@voken/sha",
   "keywords": [
     "sha1",
@@ -25,7 +25,9 @@
     "url": "https://github.com/voken1000g/npm-sha/issues"
   },
   "main": "src/index.js",
+  "types": "src/index.d.ts",
   "dependencies": {
+    "@types/node": "^14.14.16"
   },
   "test": "echo \"Error: no test specified\" && exit 1"
 }
