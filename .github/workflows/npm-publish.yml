@@ -22,6 +22,8 @@ jobs:
         id: create_release
         if: steps.autotagger.outputs.tagcreated == 'yes'
         uses: actions/create-release@v1.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.autotagger.outputs.tagname }}
           release_name: ${{ steps.autotagger.outputs.tagname }}
