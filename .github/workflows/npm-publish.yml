@@ -15,19 +15,14 @@ jobs:
       - name: tag
         id: autotagger
         uses: butlerlogic/action-autotag@stable
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: release
         id: create_release
         if: steps.autotagger.outputs.tagcreated == 'yes'
         uses: actions/create-release@v1.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ steps.autotagger.outputs.tagname }}
           release_name: ${{ steps.autotagger.outputs.tagname }}
-          body: ${{ steps.autotagger.outputs.tagmessage }}
           draft: false
           prerelease: ${{ steps.autotagger.outputs.prerelease == 'yes' }}
 
