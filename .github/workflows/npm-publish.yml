@@ -31,9 +31,17 @@ jobs:
           draft: false
           prerelease: ${{ steps.autotagger.outputs.prerelease == 'yes' }}
 
+      - name: setup node
+        id: setup_node
+        if: steps.autotagger.outputs.tagname != ''
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          registry-url: https://registry.npmjs.org/
+
       - name: publish
         id: publish
         if: steps.autotagger.outputs.tagname != ''
-        uses: author/action-publish@stable
+        run: npm publish --access public
         env:
-          REGISTRY_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
